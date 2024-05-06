@@ -9,7 +9,7 @@ public class Atleta extends Pessoa {
     }
     
     
-    public Atleta(String pais, Double tempo, String name, Character sex) {
+    public Atleta(String name, String pais, Character sex, Double tempo) {
         super(name, sex);
         this.pais = pais;
         this.tempo = tempo;

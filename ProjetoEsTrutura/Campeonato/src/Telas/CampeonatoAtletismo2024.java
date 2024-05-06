@@ -12,7 +12,31 @@ public class CampeonatoAtletismo2024 extends javax.swing.JFrame {
         p1 = new Pilha();
         f1 = new Fila();
         initComponents();
+        cadastrarDadosIniciais();
     }
+    public void cadastrarDadosIniciais() {
+
+    Atleta a1 = new Atleta("Laura Stewart", "USA", 'F', 10.65);
+    p1.push(a1);
+    Atleta a2 = new Atleta("Francesco Laurentis", "Itália", 'M', 10.98);
+    f1.enqueue(a2);
+    Atleta a3 = new Atleta("Lívia Alves", "Brasil", 'F', 11.32);
+    p1.push(a3);
+    Atleta a4 = new Atleta("Marcos Silva", "Brasil", 'M', 9.98);
+    f1.enqueue(a4);
+    Atleta a5 = new Atleta("Fernando Sotomayor", "Cuba", 'M', 11.42);
+    f1.enqueue(a5);
+    Atleta a6 = new Atleta("Miley Marley", "Jamaica", 'F', 10.58);
+    p1.push(a6);
+    Atleta a7 = new Atleta("Pierre Depardiu", "França", 'M', 11.78);
+    f1.enqueue(a7);
+    Atleta a8 = new Atleta("Renata Medeiros", "Portugal", 'F', 12.14);   
+    p1.push(a8);
+    //agora, adicionar aqui os atletas anteriores nas estruturas 
+
+    //de dados utilizadas neste projeto:  
+
+  }
     public void bubbleSort(Atleta[] x){
         for (int i = 0; i < x.length - 1; i++) {
             for (int j = 0; j < x.length-1-i; j++) {
@@ -264,10 +288,10 @@ public class CampeonatoAtletismo2024 extends javax.swing.JFrame {
             Atleta t1;
         if(!("".equals(Name)) && !("".equals(Country)) && !("Selecione:".equals(sex))){
             if(sex.equalsIgnoreCase("masculino")){
-            t1 = new Atleta(Country, Time, Name, 'M');
+            t1 = new Atleta(Name,Country,'M',Time);
             f1.enqueue(t1);
         }else{
-            t1 = new Atleta(Country, Time, Name, 'F');
+            t1 = new Atleta(Name,Country,'F',Time);
             p1.push(t1);
         }
         JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso");
@@ -384,6 +408,7 @@ public class CampeonatoAtletismo2024 extends javax.swing.JFrame {
 
     private void MostraPilhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostraPilhaActionPerformed
         if(p1.isEmpty()){
+            jTextArea1.setText("");
             JOptionPane.showMessageDialog(null, "A pilha está vazia");
         }else{
             jTextArea1.setText(p1.toString());
@@ -392,7 +417,8 @@ public class CampeonatoAtletismo2024 extends javax.swing.JFrame {
 
     private void MostraFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostraFilaActionPerformed
         if(f1.isEmpty()){
-            JOptionPane.showMessageDialog(null, "A pilha está vazia");
+            jTextArea1.setText("");
+            JOptionPane.showMessageDialog(null, "A Fila está vazia");
         }else{
             jTextArea1.setText(f1.toString());
         }
@@ -400,6 +426,7 @@ public class CampeonatoAtletismo2024 extends javax.swing.JFrame {
 
     private void RetiraPilhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetiraPilhaActionPerformed
         if(p1.isEmpty()){
+            jTextArea1.setText("");
             JOptionPane.showMessageDialog(null, "A pilha está vazia");
         }else{
             Atleta a2 = (Atleta) p1.pop();
@@ -409,6 +436,7 @@ public class CampeonatoAtletismo2024 extends javax.swing.JFrame {
 
     private void RetiraFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetiraFilaActionPerformed
         if(f1.isEmpty()){
+            jTextArea1.setText("");
             JOptionPane.showMessageDialog(null, "A fila está vazia");
         }else{
             Atleta a3 = (Atleta) f1.dequeue();
